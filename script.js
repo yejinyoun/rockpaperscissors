@@ -110,6 +110,17 @@ function whoTheWinner() {
 
 function showResult() {
   console.log("screen");
+  if (result == "win") {
+    document.querySelector("#win").classList.remove("hidden");
+  }
+
+  if (result == "lose") {
+    document.querySelector("#lose").classList.remove("hidden");
+  }
+
+  if (result == "tie") {
+    document.querySelector("#draw").classList.remove("hidden");
+  }
 }
 
 function replay() {
