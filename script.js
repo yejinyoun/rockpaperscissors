@@ -16,6 +16,15 @@ function startGame() {
 
 function computerChoice() {
   console.log("computerchoice");
+
+  let compchoices = ["rock", "scis", "pape"];
+
+  let randomChoice = Math.floor(Math.random() * 3);
+
+  compcho = compchoices[randomChoice];
+
+  console.log(compcho);
+
   animateHands();
 }
 
@@ -27,6 +36,7 @@ function userChoice() {
   function userRock() {
     usercho = "rock";
     console.log(usercho);
+    computerChoice();
   }
 
   scis.addEventListener("click", userScis);
@@ -34,6 +44,7 @@ function userChoice() {
   function userScis() {
     usercho = "scis";
     console.log(usercho);
+    computerChoice();
   }
 
   pape.addEventListener("click", userPape);
@@ -41,9 +52,8 @@ function userChoice() {
   function userPape() {
     usercho = "pape";
     console.log(usercho);
+    computerChoice();
   }
-
-  computerChoice();
 }
 
 function animateHands() {
