@@ -81,6 +81,26 @@ function whoTheWinner() {
     console.log(result);
   }
 
+  // tie
+  if (usercho == compcho) {
+    result = "tie";
+    console.log(result);
+  }
+
+  //lose
+  if (usercho == "scis" && compcho == "rock") {
+    result = "lose";
+    console.log(result);
+  }
+  if (usercho == "rock" && compcho == "pape") {
+    result = "lose";
+    console.log(result);
+  }
+  if (usercho == "pape" && compcho == "scis") {
+    result = "lose";
+    console.log(result);
+  }
+
   showResult();
 }
 
