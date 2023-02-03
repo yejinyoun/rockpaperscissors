@@ -2,6 +2,7 @@
 
 let usercho;
 let compcho;
+let result;
 
 const rock = document.querySelector(".rock");
 const scis = document.querySelector(".scissors");
@@ -63,6 +64,23 @@ function animateHands() {
 
 function whoTheWinner() {
   console.log("im the winner");
+
+  // win
+  if (usercho == "rock" && compcho == "scis") {
+    result = "win";
+    console.log(result);
+  }
+
+  if (usercho == "scis" && compcho == "pape") {
+    result = "win";
+    console.log(result);
+  }
+
+  if (usercho == "pape" && compcho == "rock") {
+    result = "win";
+    console.log(result);
+  }
+
   showResult();
 }
 
