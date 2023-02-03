@@ -1,9 +1,13 @@
-init();
+"use strict";
 
-function init() {
-  console.log("init");
-  startGame();
-}
+let usercho;
+let compcho;
+
+const rock = document.querySelector(".rock");
+const scis = document.querySelector(".scissors");
+const pape = document.querySelector(".paper");
+
+startGame();
 
 function startGame() {
   console.log("start");
@@ -17,6 +21,28 @@ function computerChoice() {
 
 function userChoice() {
   console.log("userchoice");
+
+  rock.addEventListener("click", userRock);
+
+  function userRock() {
+    usercho = "rock";
+    console.log(usercho);
+  }
+
+  scis.addEventListener("click", userScis);
+
+  function userScis() {
+    usercho = "scis";
+    console.log(usercho);
+  }
+
+  pape.addEventListener("click", userPape);
+
+  function userPape() {
+    usercho = "pape";
+    console.log(usercho);
+  }
+
   computerChoice();
 }
 
@@ -36,12 +62,9 @@ function showResult() {
 
 function replay() {
   console.log("replay");
-  init();
+  startGame();
 }
 
 function end() {
   console.log("the end");
 }
-
-
-
