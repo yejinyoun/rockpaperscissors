@@ -2,7 +2,7 @@
 
 let usercho;
 let compcho;
-let result;
+let result = "";
 
 const rock = document.querySelector(".rock");
 const scis = document.querySelector(".scissors");
@@ -59,6 +59,10 @@ function userChoice() {
 
 function animateHands() {
   console.log("shaky shaky");
+
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
+
   whoTheWinner();
 }
 
