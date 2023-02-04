@@ -105,6 +105,8 @@ function whoTheWinner() {
     console.log(result);
   }
 
+  //making the result screen shows after the hand shake animation ends.
+
   setTimeout(showResult, "2000");
 }
 
@@ -120,6 +122,30 @@ function showResult() {
 
   if (result == "tie") {
     document.querySelector("#draw").classList.remove("hidden");
+  }
+
+  //user hand results
+  if (usercho == "rock") {
+    document.querySelector("#player1").style.backgroundImage = "url('hand_rock.png')";
+  }
+  if (usercho == "scis") {
+    document.querySelector("#player1").style.backgroundImage = "url('hand_scissors.png')";
+  }
+  if (usercho == "pape") {
+    document.querySelector("#player1").style.backgroundImage = "url('hand_paper.png')";
+  }
+
+  //comp hand results
+  if (compcho == "rock") {
+    document.querySelector("#player2").style.backgroundImage = "url('hand_rock.png')";
+  }
+
+  if (compcho == "scis") {
+    document.querySelector("#player2").style.backgroundImage = "url('hand_scissors.png')";
+  }
+
+  if (compcho == "pape") {
+    document.querySelector("#player2").style.backgroundImage = "url('hand_paper.png')";
   }
 }
 
