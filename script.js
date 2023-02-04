@@ -105,7 +105,7 @@ function whoTheWinner() {
     console.log(result);
   }
 
-  showResult();
+  setTimeout(showResult, "2000");
 }
 
 function showResult() {
