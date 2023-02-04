@@ -3,6 +3,7 @@
 let usercho;
 let compcho;
 let result = "";
+let resultOn = false;
 
 const rock = document.querySelector(".rock");
 const scis = document.querySelector(".scissors");
@@ -112,41 +113,49 @@ function whoTheWinner() {
 
 function showResult() {
   console.log("screen");
-  if (result == "win") {
-    document.querySelector("#win").classList.remove("hidden");
+  if (resultOn == false) {
+    if (result == "win") {
+      document.querySelector("#win").classList.remove("hidden");
+    }
+
+    if (result == "lose") {
+      document.querySelector("#lose").classList.remove("hidden");
+    }
+
+    if (result == "tie") {
+      document.querySelector("#draw").classList.remove("hidden");
+    }
+
+    //user hand results
+    if (usercho == "rock") {
+      document.querySelector("#player1").style.backgroundImage = "url('hand_rock.png')";
+    }
+    if (usercho == "scis") {
+      document.querySelector("#player1").style.backgroundImage = "url('hand_scissors.png')";
+    }
+    if (usercho == "pape") {
+      document.querySelector("#player1").style.backgroundImage = "url('hand_paper.png')";
+    }
+
+    //comp hand results
+    if (compcho == "rock") {
+      document.querySelector("#player2").style.backgroundImage = "url('hand_rock.png')";
+    }
+
+    if (compcho == "scis") {
+      document.querySelector("#player2").style.backgroundImage = "url('hand_scissors.png')";
+    }
+
+    if (compcho == "pape") {
+      document.querySelector("#player2").style.backgroundImage = "url('hand_paper.png')";
+    }
   }
 
-  if (result == "lose") {
-    document.querySelector("#lose").classList.remove("hidden");
-  }
+  // no matter the result is on, if userchoice and comp choice gets execute,
+  //it showed the banners multiple time bc it class hidden remove gets activated
+  //to prevent this we made the showresult function to work only when the result isn't on.
 
-  if (result == "tie") {
-    document.querySelector("#draw").classList.remove("hidden");
-  }
-
-  //user hand results
-  if (usercho == "rock") {
-    document.querySelector("#player1").style.backgroundImage = "url('hand_rock.png')";
-  }
-  if (usercho == "scis") {
-    document.querySelector("#player1").style.backgroundImage = "url('hand_scissors.png')";
-  }
-  if (usercho == "pape") {
-    document.querySelector("#player1").style.backgroundImage = "url('hand_paper.png')";
-  }
-
-  //comp hand results
-  if (compcho == "rock") {
-    document.querySelector("#player2").style.backgroundImage = "url('hand_rock.png')";
-  }
-
-  if (compcho == "scis") {
-    document.querySelector("#player2").style.backgroundImage = "url('hand_scissors.png')";
-  }
-
-  if (compcho == "pape") {
-    document.querySelector("#player2").style.backgroundImage = "url('hand_paper.png')";
-  }
+  resultOn = true;
 }
 
 //replay button
