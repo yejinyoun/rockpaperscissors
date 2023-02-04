@@ -149,11 +149,13 @@ function showResult() {
   }
 }
 
+//replay button
+document.querySelector(".replay").addEventListener("click", replay);
+
+//refreshing function
+
 function replay() {
   console.log("replay");
+  location.reload();
   startGame();
-}
-
-function end() {
-  console.log("the end");
 }
